@@ -1,0 +1,23 @@
+# config for data creation
+
+#Dataset parameters
+dataset:
+  mode: "from_pmids"      #Options: from_pmids, from_bioc, from_silver_generation
+  quality: "gold"         #Options: gold, silver, inference
+  
+  # Loading from BiocXML files
+  bioc_source:
+    path: /data/bioc/
+  
+  # Loading from PMIDs
+  #Put pmids.txt in the data/pmid/ directory
+  pmid_source:
+    path: /data/pmid/pmids.txt
+  
+
+
+dataset_id: "biomedical-ner-dataset"
+mode: "pmids"
+pmids_file: "data/pmids.txt"
+split_strategy: "train_dev_test"
+config: "data_creation/config.yaml"
