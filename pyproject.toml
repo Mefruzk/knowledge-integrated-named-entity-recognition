@@ -1,11 +1,46 @@
 [build-system]
-requires = ["setuptools>=45", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.pytest.ini_options]
-pythonpath = ["."]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
+[project]
+name = "ner-core"
+version = "0.1.0"
+description = "Biomedical NER with knowledge integration"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Efruz Karabulut", email = "mefruzk@gmail.com"}
+]
+
+# Core dependencies
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "datasets>=2.14.0",
+    "pydantic>=2.0.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scikit-learn>=1.3.0",
+    "tqdm>=4.65.0",
+]
+
+# Optional dependencies (install with: pip install -e ".[dev]")
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "black>=23.0.0",
+    "ruff>=0.0.280",
+    "jupyter>=1.0.0",
+]
+wandb = [
+    "wandb>=0.15.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ner_core = ["py.typed"]
+
+
 

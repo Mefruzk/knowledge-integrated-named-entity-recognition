@@ -1,0 +1,15 @@
+model:
+  name: "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext"
+  num_labels: 5
+
+training:
+  num_epochs: 5
+  batch_size: 32
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+
+data:
+  train_path: "data/processed/train.jsonl"
+  dev_path: "data/processed/dev.jsonl"
+  test_path: "data/processed/test.jsonl"

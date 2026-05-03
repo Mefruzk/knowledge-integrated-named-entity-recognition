@@ -2,8 +2,10 @@ __pycache__/
 *.pyc
 .env
 .ipynb_checkpoints/
-data/processed/
+data/
 tests
 .venv/
 .DS_Store
-
+src/ner_core.egg-info/
+.vscode/
+analysis/
